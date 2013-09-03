@@ -26,7 +26,7 @@
   var getSelectedTextContent = (function() {
     if (window.getSelection) {
       return function() {
-        return window.getSelection.toString();
+        return window.getSelection().toString();
       };
     } else if (document.getSelection) {
       return function() {
@@ -145,7 +145,7 @@
   };
 
   // check if jQuery is loaded
-  if ($) {
+  if (window.$) {
 
     // jQuery is loaded, let's wait until the dom is ready...
     $(function() {

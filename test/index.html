@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>textselect.js test</title>
+  <style>
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    html {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      font-size: 16px;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-size: 100%;
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      color: #232323;
+    }
+    p {
+      margin: 1.5em auto;
+    }
+    #test, #output {
+      width: 70%;
+      margin: 1.5em auto;
+      padding: 1.5em;
+    }
+    #output {
+      background: #ccc;
+      border: #232323;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="test">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, sequi, nesciunt possimus odit officiis dignissimos incidunt alias ipsum molestiae magni velit quae minus dolorum dolorem.</p>
+  </div>
+
+  <div id="output">
+    <p>Select some text above to output information about the selection here.</p>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="../textselect.js"></script>
+  <script src="test.js"></script>
+</body>
+</html>
