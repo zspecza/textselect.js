@@ -57,6 +57,20 @@
       return function() {
         return window.getSelection().getRangeAt(0).getBoundingClientRect();
       };
+    } else if (document.selection) {
+      return function() {
+        var rect = document.selection.createRange().getBoundingClientRect(),
+            obj = {
+              top: rect.top,
+              bottom: rect.bottom,
+              left: rect.left,
+              right: rect.right,
+              width: rect.right - rect.left,
+              height: rect.bottom - rect.top
+            };
+
+        return obj;
+      };
     }
   }).apply(this);
 
