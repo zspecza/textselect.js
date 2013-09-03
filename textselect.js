@@ -133,7 +133,7 @@
     var keyup = (event.type === 'keyup'),
         shiftKey = (event.which === 16),
         mouseup = (event.type === 'mouseup'),
-        $el = jQuery(event.target);
+        $el = $(event.target);
 
     // if the event was a keyup, and that key was the shift key,
     // or if the event was a mouseup, call triggerSelectedTextEvent
