@@ -71,7 +71,7 @@
 
   /**
    * @function triggerSelectedTextEvent
-   * @param  {Object} $el [a jQuery element object]
+   * @param  {Object} $el [a jQuery DOM Element object]
    * @returns nothing
    *
    * Determines current state of the selection and triggers the `textselect`
@@ -97,7 +97,7 @@
       // get the coordinates and size of the selection
       selectionInformation = getSelectionInformation();
 
-      // trigger the event
+      // trigger the event and attach selection object parameters
       $el.trigger('textselect', {
         top: selectionInformation.top,
         bottom: selectionInformation.bottom,
@@ -115,6 +115,30 @@
 
     // reset selection content
     selectionText = '';
+
+  };
+
+  /**
+   * @function attachSelectedTextEvent
+   * @param  {Object} event
+   *
+   * This is a jQuery event callback that listens for mouseup/keyup events and
+   * passes an element to triggerSelectedTextEvent which then determines
+   * whether or not to trigger a `textselect` event.
+   */
+  var attachSelectedTextEvent = function(event) {
+
+    var keyup = (event.type === 'keyup'),
+        shiftKey = (event.which === 16),
+        mouseup = (event.type === 'mouseup'),
+        $el = jQuery(event.target);
+
+    // if the event was a keyup, and that key was the shift key,
+    // or if the event was a mouseup, call triggerSelectedTextEvent
+    // and pass the element the event was triggered on as a parameter
+    if ((keyup && shiftKey) || mouseup) {
+      triggerSelectedTextEvent($el);
+    }
 
   };
 
