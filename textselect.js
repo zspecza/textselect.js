@@ -3,6 +3,8 @@
  *  textselect.js
  *
  *  Author: Declan de Wet <declandewet@me.com>
+ *  Version: 0.0.1
+ *  License: MIT
  *
  *  This script will trigger an event `textselect` when text is highlighted
  *  on the page. It's only dependency is jQuery.
