@@ -142,4 +142,27 @@
 
   };
 
+  // check if jQuery is loaded
+  if ($) {
+
+    // jQuery is loaded, let's wait until the dom is ready...
+    $(function() {
+
+      // ...and attach the selected text event listener to the document
+      $(document).on('mouseup keyup', attachSelectedTextEvent);
+
+    });
+
+  // uhoh, jQuery isn't loaded.
+  } else {
+
+    // we'd better warn the user
+    var errorMessage = "textselect.js depends on jQuery in order to " +
+                       "function. Please ensure that you have loaded " +
+                       "jQuery and that this script is loaded afterwards.";
+
+    throw new Error(errorMessage);
+
+  }
+
 }).call(this);
