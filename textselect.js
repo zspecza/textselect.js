@@ -14,6 +14,8 @@
 // enclose code in top-level function scope to prevent creation of globals
 (function() {
 
+  'use strict';
+
   /**
    * @function getSelectedTextContent
    * @return {String} Content within a highlighted selection, if any present.
@@ -74,14 +76,12 @@
     }
   }).apply(this);
 
-  // the below 3 variables are used to prevent triggering the event
+  // the below 2 variables are used to prevent triggering the event
   // when selected text is deselected on mouse click, as well as to
   // ensure that text is actually selected before triggering the event
 
   // stores selection text content
   var selectionText = '',
-  // used to determine active state of selection
-  isTextSelected = false,
   // used to ensure current selection content is not same as the previous one
   previousSelection;
 
