@@ -121,7 +121,11 @@
         right: selectionInformation.right,
         width: selectionInformation.width,
         height: selectionInformation.height,
-        text: selectionText
+        text: selectionText,
+        triggeredBy: {
+          element: $el,
+          eventType: event.type
+        }
       });
 
     }

@@ -6,7 +6,11 @@ $(function(){
         r = "<p>Right: " + selection.right + "</p>",
         w = "<p>Width: " + selection.width + "</p>",
         h = "<p>Height: " + selection.height + "</p>",
-        tx = "<p>Text: " + selection.text + "</p>";
-    $('#output').html(t+b+l+r+w+h+tx);
+        tx = "<p>Text: " + selection.text + "</p>",
+        el = "<p>Triggered By: (element): " +
+             selection.triggeredBy.element.get(0).nodeName.toLowerCase() +
+             " and (event): " + selection.triggeredBy.eventType +
+             "</p>";
+    $('#output').html(t+b+l+r+w+h+tx+el);
   });
 });
